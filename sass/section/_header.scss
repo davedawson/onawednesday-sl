@@ -1,0 +1,27 @@
+.header {
+	text-align: center;
+
+	background: $color-white;
+	padding: 30px 5%;
+	a {
+		text-decoration: none;
+	}
+	h1 {
+		font-size: 18px;
+		font-family: $type-sans;
+		text-transform: uppercase;
+		letter-spacing: 0.35em;
+		font-weight: 500;
+		margin: 0.67em 0 0.5em;
+		a {
+			color: $color-black;
+		}
+	}
+	p {
+		font-family: $type-serif;
+		font-style: italic;
+		color: transparentize($color-text, 0.4);
+		font-size: 14px;
+		line-height: 20px;
+	}
+}

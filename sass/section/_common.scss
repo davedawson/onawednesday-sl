@@ -1,0 +1,132 @@
+body {
+	// background-color: $color-bg;
+	background-color: $color-white;
+	color: $color-black;
+	font-family: $type-serif;
+}
+img {
+	max-width: 100%;
+	@include baseTransition;
+}
+
+.content {
+	margin: 0 2%;
+}
+img {
+	margin: 0 auto;
+	display: block;
+}
+.title {
+	text-align: left;
+	margin: 0 auto;
+	max-width: 1400px;
+	background: $color-bg;
+	padding: 30px 0;
+	// border-bottom: 1px solid darken($color-bg, 10%);
+	@include box-sizing(border-box);
+	@include respond-to(mobile) {
+		padding: 15px 0;
+	}
+	.wrap {
+		width: 60%;
+		padding: 0;
+		margin: 0 auto;
+		max-width: 760px;
+		@include respond-to(tablet) {
+			width: 85%;
+			padding: 0 5%;
+		}
+		@include respond-to(mobile) {
+			width: 100%;
+			padding: 0 3%;
+		}
+	}
+	h2 {
+		font-size: 36px;
+		font-weight: 700;
+		display: block;
+		float: left;
+		font-family: $type-serif;
+		@include baseTransition;
+		@include box-sizing(border-box);
+	}
+	.meta {
+		float: right;
+		text-align: left;
+		p {
+			font-family: $type-sans;
+			font-size: 16px;
+			font-weight: 500;
+			margin: 0;
+			line-height: 20px;
+			color: transparentize($color-text, 0.4);
+		}
+		span {
+			margin-right: 5px;
+			color: transparentize($color-text, 0.3);
+			font-size: 0.7em
+		}
+	}
+	.date-time {
+		margin-top: 5px;
+		@include baseTransition;
+		@include respond-to(mobile) {
+			font-size: 14px;
+			display: block;
+			text-align: left;
+			margin-top: 5px;
+		}
+	}
+}
+
+.interview {
+	width: 60%;
+	padding: 30px 0;
+	max-width: 760px;
+	margin: 0 auto;
+	@include box-sizing(border-box);
+	@include baseTransition;
+	@include respond-to(tablet) {
+		width: 85%;
+		padding: 20px 5%;
+	}
+	@include respond-to(mobile) {
+		width: 100%;
+		padding: 15px 3%;
+	}
+	.question {
+		font-family: $type-serif;
+		font-weight: 700;
+		margin: 20px 0 10px;
+		color: $color-black;
+	}
+}
+.posts {
+	li {
+		margin: 0 0 150px;
+		@include respond-to(tablet) {
+			margin: 0 0 60px;
+		}
+		@include respond-to(mobile) {
+			margin: 0 0 30px;
+		}
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+
+hr {
+	width: 1em;
+	height: 4px;
+	display: block;
+	background-color: $color-black;
+	border: 0;
+	margin: 50px 0;
+	float: left;
+}
+
+.main {
+	max-width: 760px;
+	margin: 0 auto;
+}
