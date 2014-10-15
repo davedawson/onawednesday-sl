@@ -13,4 +13,38 @@
       </div>
     {% endfor %}
   </section>
+  {% if next or previous %}
+    <section class="pagination">
+        {% if previous %}
+          <a href="{{ previous.url }}" class="previous"><span>Last Wednesday</span>{{ previous.title }} {{ next.meta['Description'] }}</a>
+        {% else %}
+          <span class="previous">Brick wall</span>
+        {% endif %}
+
+        <a href="#" class="random">Random Wednesday</a>
+
+        {% if next %}
+          <a href="{{ next.url }}" class="next"><span>Next Wednesday</span>{{ next.title }} {{ next.meta['Description'] }}</a>
+        {% else %}
+          <span class="next">Brick wall</span>
+        {% endif %}
+    </section>
+    <!-- your container must have an ID -->
+    <div id="lazyjson" class="thumbs">
+
+        <!-- template -->
+        <!-- template ID uses prefix 'template-' and ID of container by default -->
+        <div id="template-lazyjson" class="thumbnail">
+        {% raw %}
+            <a href="{{data.url}}">
+              <h3>{{data.title}}</h3>
+              <div class="image" style="background-image: url('{{data.image}}')">
+              </div>
+            </a>
+        {% endraw %}
+        </div>
+        <!-- /template -->
+
+    </div>
+  {% endif %}
 {% include 'includes/footer' %}

@@ -610,11 +610,64 @@ h1 a {
   text-decoration: none;
 }
 
+/* line 55, ../sass/section/_common.scss */
+.thumbs {
+  clear: both;
+}
+
+/* line 59, ../sass/section/_common.scss */
+.thumbnail {
+  width: 25%;
+  height: 250px;
+  float: left;
+  border: 2px solid white;
+}
+/* line 64, ../sass/section/_common.scss */
+.thumbnail a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+/* line 71, ../sass/section/_common.scss */
+.thumbnail a:hover .image {
+  opacity: 1;
+}
+/* line 75, ../sass/section/_common.scss */
+.thumbnail .image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.5;
+}
+/* line 83, ../sass/section/_common.scss */
+.thumbnail h3 {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 /* line 1, ../sass/section/_header.scss */
 .header {
   text-align: center;
   background: white;
-  padding: 30px 5%;
+  padding: 15px 5%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 /* line 6, ../sass/section/_header.scss */
 .header a {
@@ -622,18 +675,19 @@ h1 a {
 }
 /* line 9, ../sass/section/_header.scss */
 .header h1 {
-  font-size: 18px;
+  font-size: 12px;
+  line-height: 16px;
   font-family: "Whitney A", "Whitney B", Helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.35em;
   font-weight: 500;
-  margin: 0.67em 0 0.5em;
+  margin: 0;
 }
-/* line 16, ../sass/section/_header.scss */
+/* line 17, ../sass/section/_header.scss */
 .header h1 a {
   color: black;
 }
-/* line 20, ../sass/section/_header.scss */
+/* line 21, ../sass/section/_header.scss */
 .header p {
   font-family: "skolar", Georgia, times, serif;
   font-style: italic;
@@ -676,12 +730,16 @@ footer span {
     width: 74.49495%;
   }
 }
-/* line 9, ../sass/section/_interview.scss */
+/* line 8, ../sass/section/_interview.scss */
+.interview .pic img {
+  width: 100%;
+}
+/* line 12, ../sass/section/_interview.scss */
 .interview .description {
   padding: 20px 10%;
 }
 @media only screen and (min-width: 641px) {
-  /* line 9, ../sass/section/_interview.scss */
+  /* line 12, ../sass/section/_interview.scss */
   .interview .description {
     padding: 60px 3%;
     position: absolute;
@@ -693,10 +751,43 @@ footer span {
     width: 23.48485%;
   }
 }
-/* line 18, ../sass/section/_interview.scss */
+/* line 21, ../sass/section/_interview.scss */
 .interview .description strong {
   display: block;
   margin: 15px 0 5px;
+}
+
+/* line 29, ../sass/section/_interview.scss */
+.pagination .previous, .pagination .random, .pagination .next {
+  padding: 30px 5%;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid white;
+  width: 33.33333333%;
+  float: left;
+}
+/* line 41, ../sass/section/_interview.scss */
+.pagination .previous span, .pagination .random span, .pagination .next span {
+  font-size: 14px;
+  line-height: 14px;
+  display: block;
+  opacity: 0.5;
+}
+@media only screen and (min-width: 641px) {
+  /* line 48, ../sass/section/_interview.scss */
+  .pagination .previous {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 641px) {
+  /* line 59, ../sass/section/_interview.scss */
+  .pagination .next {
+    text-align: right;
+  }
 }
 
 /* line 1, ../sass/_base.scss */

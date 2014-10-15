@@ -1,18 +1,19 @@
 .header {
 	text-align: center;
-
 	background: $color-white;
-	padding: 30px 5%;
+	padding: 15px 5%;
+	border-bottom: 1px solid rgba(0,0,0,0.05);
 	a {
 		text-decoration: none;
 	}
 	h1 {
-		font-size: 18px;
+		font-size: 12px;
+		line-height: 16px;
 		font-family: $type-sans;
 		text-transform: uppercase;
 		letter-spacing: 0.35em;
 		font-weight: 500;
-		margin: 0.67em 0 0.5em;
+		margin: 0;
 		a {
 			color: $color-black;
 		}

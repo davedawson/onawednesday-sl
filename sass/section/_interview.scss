@@ -5,6 +5,9 @@
     @include respond-to(medium-and-above) {
       @include gs-span(d, 4, 12);
     }
+    img {
+      width: 100%;
+    }
   }
   .description {
     // width: 25%;
@@ -18,6 +21,45 @@
     strong {
       display: block;
       margin: 15px 0 5px;
+    }
+  }
+}
+
+.pagination {
+  .previous, .random, .next {
+    padding: 30px 5%;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid white;
+    width: 33.33333333%;
+    float: left;
+    // @include gs-pad(d, padfull);
+    span {
+      font-size: 14px;
+      line-height: 14px;
+      display: block;
+      opacity: 0.5;
+    }
+  }
+  .previous {
+    @include respond-to(medium-and-above) {
+      text-align: left;
+      // @include gs-span(d, 1, 4);
+    }
+  }
+  .random {
+    @include respond-to(medium-and-above) {
+      // @include gs-span(d, 5, 8);
+    }
+  }
+  .next {
+    @include respond-to(medium-and-above) {
+      text-align: right;
+      // @include gs-span(d, 9, 12);
     }
   }
 }

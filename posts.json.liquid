@@ -1,9 +1,14 @@
 [
 {% for post in site.posts %}
   {
-    "title": "{{ post.title | escape }}",
-    "image": "{{ post.assets.first.url }}",
-    "url": "{{ post.url | escape }}"
+    "id": "{{ post.id }}",
+    "data": {
+      "title": "{{ post.title | escape }}",
+      "image": "{{ post.assets.first.url }}",
+      "url": "{{ post.url | escape }}",
+      "description": "{{ post.meta['Description'] | escape }}"
+    }
+
   }{% unless forloop.last %},{% endunless %}
 {% endfor %}
 ]
