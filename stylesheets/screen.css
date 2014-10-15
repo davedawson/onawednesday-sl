@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,47 +24,62 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
+}
+
+/* line 14, ../sass/modules/_functions.scss */
+.cf {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* apply a natural box layout model to all elements */
+/* line 27, ../sass/modules/_functions.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
@@ -507,13 +522,28 @@ html:hover .ss-icon {
 }
 
 /* line 1, ../sass/section/_common.scss */
-body {
-  background-color: white;
-  color: black;
-  font-family: "skolar", Georgia, times, serif;
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
 
-/* line 7, ../sass/section/_common.scss */
+/* line 5, ../sass/section/_common.scss */
+body {
+  background-color: black;
+  color: white;
+  font-family: "Whitney A", "Whitney B", Helvetica, sans-serif;
+}
+
+/* line 11, ../sass/section/_common.scss */
 img {
   max-width: 100%;
   -webkit-transition-property: all;
@@ -526,178 +556,30 @@ img {
   transition-duration: 0.5s;
 }
 
-/* line 12, ../sass/section/_common.scss */
+/* line 16, ../sass/section/_common.scss */
 .content {
-  margin: 0 2%;
+  min-height: 0;
+  position: relative;
+}
+/* line 22, ../sass/modules/_functions.scss */
+.content:before, .content:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+/* line 23, ../sass/modules/_functions.scss */
+.content:after {
+  clear: both;
 }
 
-/* line 15, ../sass/section/_common.scss */
+/* line 21, ../sass/section/_common.scss */
 img {
   margin: 0 auto;
   display: block;
 }
 
-/* line 19, ../sass/section/_common.scss */
-.title {
-  text-align: left;
-  margin: 0 auto;
-  max-width: 1400px;
-  background: #f6f6f6;
-  padding: 30px 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-@media only screen and (max-width: 568px) {
-  /* line 19, ../sass/section/_common.scss */
-  .title {
-    padding: 15px 0;
-  }
-}
-/* line 30, ../sass/section/_common.scss */
-.title .wrap {
-  width: 60%;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 760px;
-}
-@media only screen and (min-width: 569px) and (max-width: 1025px) {
-  /* line 30, ../sass/section/_common.scss */
-  .title .wrap {
-    width: 85%;
-    padding: 0 5%;
-  }
-}
-@media only screen and (max-width: 568px) {
-  /* line 30, ../sass/section/_common.scss */
-  .title .wrap {
-    width: 100%;
-    padding: 0 3%;
-  }
-}
-/* line 44, ../sass/section/_common.scss */
-.title h2 {
-  font-size: 36px;
-  font-weight: 700;
-  display: block;
-  float: left;
-  font-family: "skolar", Georgia, times, serif;
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/* line 53, ../sass/section/_common.scss */
-.title .meta {
-  float: right;
-  text-align: left;
-}
-/* line 56, ../sass/section/_common.scss */
-.title .meta p {
-  font-family: "Whitney A", "Whitney B", Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  margin: 0;
-  line-height: 20px;
-  color: rgba(74, 70, 56, 0.6);
-}
-/* line 64, ../sass/section/_common.scss */
-.title .meta span {
-  margin-right: 5px;
-  color: rgba(74, 70, 56, 0.7);
-  font-size: 0.7em;
-}
-/* line 70, ../sass/section/_common.scss */
-.title .date-time {
-  margin-top: 5px;
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-}
-@media only screen and (max-width: 568px) {
-  /* line 70, ../sass/section/_common.scss */
-  .title .date-time {
-    font-size: 14px;
-    display: block;
-    text-align: left;
-    margin-top: 5px;
-  }
-}
-
-/* line 82, ../sass/section/_common.scss */
-.interview {
-  width: 60%;
-  padding: 30px 0;
-  max-width: 760px;
-  margin: 0 auto;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-}
-@media only screen and (min-width: 569px) and (max-width: 1025px) {
-  /* line 82, ../sass/section/_common.scss */
-  .interview {
-    width: 85%;
-    padding: 20px 5%;
-  }
-}
-@media only screen and (max-width: 568px) {
-  /* line 82, ../sass/section/_common.scss */
-  .interview {
-    width: 100%;
-    padding: 15px 3%;
-  }
-}
-/* line 97, ../sass/section/_common.scss */
-.interview .question {
-  font-family: "skolar", Georgia, times, serif;
-  font-weight: 700;
-  margin: 20px 0 10px;
-  color: black;
-}
-
-/* line 105, ../sass/section/_common.scss */
-.posts li {
-  margin: 0 0 150px;
-}
-@media only screen and (min-width: 569px) and (max-width: 1025px) {
-  /* line 105, ../sass/section/_common.scss */
-  .posts li {
-    margin: 0 0 60px;
-  }
-}
-@media only screen and (max-width: 568px) {
-  /* line 105, ../sass/section/_common.scss */
-  .posts li {
-    margin: 0 0 30px;
-  }
-}
-/* line 113, ../sass/section/_common.scss */
-.posts li:last-child {
-  margin: 0;
-}
-
-/* line 119, ../sass/section/_common.scss */
+/* line 26, ../sass/section/_common.scss */
 hr {
   width: 1em;
   height: 4px;
@@ -708,10 +590,24 @@ hr {
   float: left;
 }
 
-/* line 129, ../sass/section/_common.scss */
-.main {
-  max-width: 760px;
-  margin: 0 auto;
+/* line 36, ../sass/section/_common.scss */
+p {
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+
+/* line 43, ../sass/section/_common.scss */
+h1 {
+  color: white;
+  font-size: 56px;
+  line-height: 60px;
+  font-weight: bold;
+}
+/* line 48, ../sass/section/_common.scss */
+h1 a {
+  color: white;
+  text-decoration: none;
 }
 
 /* line 1, ../sass/section/_header.scss */
@@ -770,60 +666,37 @@ footer span {
   margin-right: 5px;
 }
 
-/* line 2, ../sass/section/_pages.scss */
-#purpose .intro {
-  font-size: 32px;
-  line-height: 40px;
-  font-family: "skolar", Georgia, times, serif;
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-@media only screen and (max-width: 568px) {
-  /* line 2, ../sass/section/_pages.scss */
-  #purpose .intro {
-    font-size: 24px;
-    line-height: 30px;
-    margin-bottom: 15px;
+@media only screen and (min-width: 641px) {
+  /* line 2, ../sass/section/_interview.scss */
+  .interview .pic {
+    display: block;
+    float: left;
+    margin-left: 25.50505%;
+    margin-right: -100%;
+    width: 74.49495%;
   }
 }
-/* line 14, ../sass/section/_pages.scss */
-#purpose .half {
-  width: 48%;
-  float: left;
-  margin-right: 4%;
+/* line 9, ../sass/section/_interview.scss */
+.interview .description {
+  padding: 20px 10%;
 }
-@media only screen and (max-width: 568px) {
-  /* line 14, ../sass/section/_pages.scss */
-  #purpose .half {
-    width: 100%;
-    margin-right: 0;
+@media only screen and (min-width: 641px) {
+  /* line 9, ../sass/section/_interview.scss */
+  .interview .description {
+    padding: 60px 3%;
+    position: absolute;
+    bottom: 0;
+    display: block;
+    float: left;
+    margin-left: 0;
+    margin-right: -100%;
+    width: 23.48485%;
   }
 }
-/* line 22, ../sass/section/_pages.scss */
-#purpose .half:last-child {
-  margin-right: 0;
-}
-/* line 26, ../sass/section/_pages.scss */
-#purpose .interview {
-  padding: 0;
-}
-/* line 29, ../sass/section/_pages.scss */
-#purpose .interview .title .wrap {
-  width: 90%;
-}
-/* line 32, ../sass/section/_pages.scss */
-#purpose .interview .title p {
-  font-size: 0.9rem;
-  line-height: 1.0rem;
-}
-/* line 38, ../sass/section/_pages.scss */
-#purpose .interview h2 {
-  font-size: 26px;
-}
-/* line 41, ../sass/section/_pages.scss */
-#purpose .interview p {
-  font-size: 1.1rem;
-  line-height: 1.5rem;
+/* line 18, ../sass/section/_interview.scss */
+.interview .description strong {
+  display: block;
+  margin: 15px 0 5px;
 }
 
 /* line 1, ../sass/_base.scss */
@@ -856,20 +729,6 @@ em {
   font-size: 22px;
   line-height: 28px;
   margin: 0 0 1em;
-}
-@media only screen and (min-width: 569px) and (max-width: 1025px) {
-  /* line 32, ../sass/_base.scss */
-  .base p {
-    font-size: 18px;
-    line-height: 22px;
-  }
-}
-@media only screen and (max-width: 568px) {
-  /* line 32, ../sass/_base.scss */
-  .base p {
-    font-size: 18px;
-    line-height: 22px;
-  }
 }
 
 /* line 50, ../sass/_base.scss */

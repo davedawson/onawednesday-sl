@@ -5,3 +5,129 @@
 @function columns( $numColumns ) {
     @return ( ($numColumns / $columns) * $contentWidth );
 }
+@mixin borderBox {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cf {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+
+@mixin clearfix { min-height:0;
+  &:before, &:after { content:"\0020"; display:block; height:0; visibility:hidden; }
+  &:after { clear:both; }
+}
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+$mq-mobile-portrait   : 320px;
+$mq-mobile-landscape  : 640px;
+$mq-tablet-portrait   : 768px;
+$mq-tablet-landscape  : 1024px;
+$mq-desktop           : 972px;
+$mq-desktop-max       : 1400px;
+
+@mixin respond-to($media) {
+  @if $media == extra-wide-screens {
+    @media only screen and (min-width: $mq-desktop-max) { @content; }
+  }
+  @if $media == wide-screens {
+    @media only screen and (min-width: $mq-desktop) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $mq-mobile-landscape + 1) and (max-width: $mq-desktop - 1) { @content; }
+  }
+  @else if $media == medium-and-above {
+    @media only screen and (min-width: $mq-mobile-landscape + 1) { @content; }
+  }
+  @else if $media == handhelds {
+    @media only screen and (max-width: $mq-mobile-landscape) { @content; }
+  }
+  @else if $media == small-handhelds {
+    @media only screen and (max-width: 450px) { @content; }
+  }
+  @else if $media == retina {
+    @media  (min--moz-device-pixel-ratio: 1.3),
+            (-o-min-device-pixel-ratio: 2.6/2),
+            (-webkit-min-device-pixel-ratio: 1.3),
+            (min-device-pixel-ratio: 1.3),
+            (min-resolution: 1.3dppx) {
+      @content;
+    }
+  }
+}
+
+@mixin center($axis: "both"){
+    position:absolute;
+    @if $axis == "y"{
+        top:50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    @if $axis == "x"{
+        left:50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    @if $axis == "both"{
+        top:50%;
+        left:50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+}
+
+@function trans($color, $percentage) {
+ @return lighten($color, (1-$percentage)*5%);
+}
+@function transd($color, $percentage) {
+ @return darken($color, (1-$percentage)*5%);
+}
+@mixin tran($type, $color, $percentage, $shade: ligthen) {
+  @if $shade == lighten {
+    @if $type == color {
+      color: trans($color, $percentage);
+      color: rgba($color, $percentage);
+    }
+    @if $type == bg {
+      background-color: trans($color, $percentage);
+      background-color: rgba($color, $percentage);
+    }
+  }
+  @else {
+     @if $type == color {
+      color: transd($color, $percentage);
+      color: rgba($color, $percentage);
+    }
+    @if $type == bg {
+      background-color: transd($color, $percentage);
+      background-color: rgba($color, $percentage);
+    }
+  }
+}
+
+@mixin svg-background($name, $w, $h) {
+  background: url('../images/#{$name}.svg') no-repeat;
+  background-size: $w $h;
+  .no-svg & {
+    background-image: url('../images/png/#{$name}.png');
+  }
+}
