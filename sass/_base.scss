@@ -1,11 +1,11 @@
 a {
   color: $color-black;
-  padding-bottom: 2px;
-  border-bottom: 2px solid transparent;
-  @include transition(border-color 0.3s ease-in-out);
+  // padding-bottom: 2px;
+  // border-bottom: 2px solid transparent;
+  // @include transition(border-color 0.3s ease-in-out);
 }
 a:hover {
-  border-bottom: 2px solid $color-black;
+  // border-bottom: 2px solid $color-black;
 }
 em {
   font-style: italic;

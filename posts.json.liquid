@@ -4,7 +4,7 @@
     "id": "{{ post.id }}",
     "data": {
       "title": "{{ post.title | escape }}",
-      "image": "{{ post.assets.first.url }}",
+      "image": "/img/thumbs/{{ post.assets.first.filename | replace: '.jpg', '-500x350.jpg'}}",
       "url": "{{ post.url | escape }}",
       "description": "{{ post.meta['Description'] | escape }}"
     }

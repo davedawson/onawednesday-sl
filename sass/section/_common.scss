@@ -57,10 +57,20 @@ h1 {
 }
 
 .thumbnail {
-	width: 25%;
-	height: 250px;
+	width: 50%;
+	height: 175px;
 	float: left;
 	border:2px solid white;
+	// @include baseTransition(border)
+	position: relative;
+	@include transition-duration(0);
+	@include respond-to(medium-and-above) {
+		width: 25%;
+		height: 250px;
+	}
+	&.loading {
+		border: 0;
+	}
 	a {
 		display: block;
 		width: 100%;
@@ -89,4 +99,25 @@ h1 {
 		z-index: 2;
 		@include center;
 	}
+}
+
+
+.loader{
+  margin: 0 0 2em;
+  // height: 100px;
+  // width: 20%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: inline-block;
+  vertical-align: top;
+	@include center;
+}
+
+/*
+  Set the color of the icon
+*/
+svg path,
+svg rect{
+  fill: #fff;
 }

@@ -1,39 +1,16 @@
 {% include 'includes/header' %}
-<div id="home">
-  <ul class="posts">
-    {% for post in posts %}
-      <li>
-        <a href="{{ post.url }}">
-          {% for asset in post.assets %}
-            <img src="{{asset.url}}" alt="{{ post.title }}">
-          {% endfor %}
-        </a>
-            <div class="title clearfix">
-                <div class="wrap clearfix">
-                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-                    <div class="meta">
-                        <p class="location"><span class="ss-icon">&#xE6D0;</span> {{post.meta['Location']}}</p>
-                        <p class="date-time"><span class="ss-icon">&#x23F2;</span> {{post.meta['Time']}}</p>
-                    </div>
-                </div>
-            </div>
-
-        <div class="interview">
-            {{ post.body }}
-        </div>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
-<div id="lazyjson">
+<div id="lazyjson" class="thumbs">
 
     <!-- template -->
     <!-- template ID uses prefix 'template-' and ID of container by default -->
-    <div id="template-lazyjson">
-
-        <a href="{{json.post-url}}" style="background-image: {{post-image}}">
-          <h3>{{post-id}}{{post-title}}</h3>{{post-image}}
+    <div id="template-lazyjson" class="thumbnail">
+    {% raw %}
+        <a href="{{data.url}}">
+          <h3>{{data.title}}</h3>
+          <div class="image" style="background-image: url('{{data.image}}')">
+          </div>
         </a>
+    {% endraw %}
     </div>
     <!-- /template -->
 

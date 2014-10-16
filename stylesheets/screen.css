@@ -617,12 +617,28 @@ h1 a {
 
 /* line 59, ../sass/section/_common.scss */
 .thumbnail {
-  width: 25%;
-  height: 250px;
+  width: 50%;
+  height: 175px;
   float: left;
   border: 2px solid white;
+  position: relative;
+  -webkit-transition-duration: 0;
+  -moz-transition-duration: 0;
+  -o-transition-duration: 0;
+  transition-duration: 0;
 }
-/* line 64, ../sass/section/_common.scss */
+@media only screen and (min-width: 641px) {
+  /* line 59, ../sass/section/_common.scss */
+  .thumbnail {
+    width: 25%;
+    height: 250px;
+  }
+}
+/* line 71, ../sass/section/_common.scss */
+.thumbnail.loading {
+  border: 0;
+}
+/* line 74, ../sass/section/_common.scss */
 .thumbnail a {
   display: block;
   width: 100%;
@@ -631,11 +647,11 @@ h1 a {
   text-decoration: none;
   position: relative;
 }
-/* line 71, ../sass/section/_common.scss */
+/* line 81, ../sass/section/_common.scss */
 .thumbnail a:hover .image {
   opacity: 1;
 }
-/* line 75, ../sass/section/_common.scss */
+/* line 85, ../sass/section/_common.scss */
 .thumbnail .image {
   width: 100%;
   height: 100%;
@@ -644,7 +660,7 @@ h1 a {
   background-position: center center;
   opacity: 0.5;
 }
-/* line 83, ../sass/section/_common.scss */
+/* line 93, ../sass/section/_common.scss */
 .thumbnail h3 {
   color: white;
   font-size: 22px;
@@ -660,6 +676,33 @@ h1 a {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+/* line 105, ../sass/section/_common.scss */
+.loader {
+  margin: 0 0 2em;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/*
+  Set the color of the icon
+*/
+/* line 121, ../sass/section/_common.scss */
+svg path,
+svg rect {
+  fill: #fff;
 }
 
 /* line 1, ../sass/section/_header.scss */
@@ -793,17 +836,6 @@ footer span {
 /* line 1, ../sass/_base.scss */
 a {
   color: black;
-  padding-bottom: 2px;
-  border-bottom: 2px solid transparent;
-  -webkit-transition: border-color 0.3s ease-in-out;
-  -moz-transition: border-color 0.3s ease-in-out;
-  -o-transition: border-color 0.3s ease-in-out;
-  transition: border-color 0.3s ease-in-out;
-}
-
-/* line 7, ../sass/_base.scss */
-a:hover {
-  border-bottom: 2px solid black;
 }
 
 /* line 10, ../sass/_base.scss */
